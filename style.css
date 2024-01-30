@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 40px;
+}
+.container{
+    width: 100%;
+    height: 41rem;
+    background-color: aliceblue;
+}
+h2{
+    cursor: pointer;
+}
+nav{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+    font-family: monospace;
+}
+nav>ul{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+nav>ul>li{
+    margin-top: 20px;
+    cursor: pointer;
+    display: inline;
+    border-bottom: 2px solid black;
+    padding-bottom: 3px;
+    transition: 0.5s;
+}
+nav>ul>li:hover{
+    color: darkslategray;
+    font-size: 16px;
+    border-bottom: 1px solid darkslategray;
+}
+
+
+.showD{
+    width: 100%;
+    height: 20.5rem;
+}
+.left{
+    float: left;
+    width: 27%;
+    height: 85%;
+    margin-left: 16%;
+    margin-top: 2%;
+}
+button{
+    width: 115px;
+    height: 35px;
+    background-color: #0d0e0e;
+    color: white;
+    font-size: 19px;
+    border: none;
+    border-radius: 5px;
+    margin: 60px 0px 0px 0px;
+    box-shadow: 15px 15px 35px 10px #88888898;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    width: 120px;
+    height: 38px;
+    background-color: #0c0b0b;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 15px 15px 35px 10px #888888;
+}
+.right{
+    float: right;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(252,252,252,0.65);
+    border-radius: 350px 0px 0px 0px;
+}
+.showM{
+    width: 100%;
+    height: 15.5rem;
+    background-color: rgba(109, 109, 109, 0.979);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.showM>div{
+    cursor: pointer;
+    position: relative;
+    width: 15%;
+    height: 50%;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+.showM>div>img{
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    margin: -27% 17%;
+    transition: 0.5s;
+}
+.showM>div:hover img{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    margin: -27% 10%;
+}
+.showM>div>.info{
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    left: 10px;
+    bottom: 0%;
+    height: 55px;
+}
