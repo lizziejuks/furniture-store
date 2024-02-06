@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, redirect to products.php
 if (isset($_SESSION['user_id'])) {
-    header("Location: products.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -39,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name'];
 
-            // Redirect to products.php upon successful login
-            header("Location: products.php");
+            // Redirect to index.php upon successful login
+            header("Location: index.php");
             exit();
         } else {
             echo "Invalid password. Please try again.";
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="about.php">About Us</a></li>
 				<li><a href="signup.php">Sign Up</a></li>
-				<li><a href="login.php.php">Log In</a></li>
+				<li><a href="login.php">Log In</a></li>
             </ul>
         </nav>
         <section class="showD">
@@ -97,6 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <button type="submit">Login</button>
                 </form>
+                <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
             </div>
         </section>
     </div>

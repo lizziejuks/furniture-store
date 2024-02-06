@@ -1,4 +1,13 @@
 <?php
+// Start session to check if the user is logged in
+session_start();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
 // Connect to the database (replace these with your actual database credentials)
 $servername = "localhost";
 $username = "root";
@@ -13,8 +22,6 @@ if ($conn->connect_error) {
 }
 
 // Fetch products from the database
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
 
 // Close the database connection
 $conn->close();
@@ -38,8 +45,8 @@ $conn->close();
                 <li><a href="products.php">Store</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="about.php">About Us</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
-				<li><a href="login.php.php">Log In</a></li>
+                
+                <li><a href="logout.php">Log Out</a></li><!-- Add a logout link -->
             </ul>
         </nav>
         <section class="showD">
@@ -51,24 +58,7 @@ $conn->close();
                 <button>Explore</button>
             </div>
         </section>
-        <section class="showM">
-            <?php
-            // Display products dynamically
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div>';
-                    echo '<img src="' . $row['image_url'] . '" alt="' . $row['name'] . '">';
-                    echo '<div class="info">';
-                    echo '<h4>' . $row['name'] . '</h4>';
-                    echo '<b>ksh.' . number_format($row['price'], 2) . '</b>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            } else {
-                echo '<p>No products available</p>';
-            }
-            ?>
-        </section>
+        
     </div>
 </body>
 </html>
