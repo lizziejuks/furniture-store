@@ -55,7 +55,7 @@ $conn->close();
                 <p>
                     Furnish your home, furnish your life. 
                 </p>
-                <button>Explore</button>
+                <button></button>
             </div>
         </section>
         
